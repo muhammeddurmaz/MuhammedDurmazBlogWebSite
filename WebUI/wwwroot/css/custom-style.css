@@ -1,0 +1,42 @@
+﻿body {
+}
+/* Tabletler için stil */
+@media (min-width: 768px) and (max-width: 1024px) {
+    #home-contact li a i {
+        font-size: 25px !important; 
+    }
+}
+
+
+/* Telefonlar için stil */
+@media (max-width: 767px) {
+   
+    #home-contact li a i {
+        font-size: 20px; /* Telefonlardaki icon boyutu */
+    }
+}
+
+@media (max-width: 710px) {
+   
+
+    #home-contact li a i {
+        font-size: 20px !important
+    }
+}
+
+
+@media (max-width: 910px) {
+
+    #home-contact li {
+        display:inline-block;
+        margin: 10px 10px 0 10px;
+    }
+   
+    #home-contact li a i {
+        font-size: 25px
+    }
+}
+
+#home-contact li a i {
+    font-size: 25px !important;
+}

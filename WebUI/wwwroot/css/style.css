@@ -402,18 +402,67 @@ textarea.form-control {
   background-color: #41228e;
   padding: 15px 100px;
 }
-@media (max-width: 991px) {
-  .navigation.nav-bg {
-    padding: 15px 20px;
-  }
-}
-@media (max-width: 991px) {
-  .navigation {
-    padding: 20px;
-    background: #41228e;
-  }
+/* Tabletler için stil */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .contact-icon a {
+        margin: 0 10px; /* Tabletlerdeki a etiketleri arasýndaki boþluk */
+    }
+
+    .contact-icon i {
+        font-size: 40px; /* Tabletlerdeki icon boyutu */
+    }
 }
 
+.contact-icon a {
+    margin: 0 50px;
+}
+
+.contact-icon a i {
+    font-size: 50px; 
+}
+
+/* Telefonlar için stil */
+@media (max-width: 767px) {
+    .contact-icon a {
+        margin: 0 5px; /* Telefonlardaki a etiketleri arasýndaki boþluk */
+    }
+
+    .contact-icon i {
+        font-size: 30px; /* Telefonlardaki icon boyutu */
+    }
+}
+
+@media (max-width: 710px) {
+  .contact-icon a{
+      margin: 10px !important
+  }
+    .contact-icon a i {
+        font-size: 25px !important
+    }
+}
+
+
+@media (max-width: 910px) {
+    .contact-icon a {
+        margin: 15px 
+    }
+
+        .contact-icon a i {
+            font-size: 35px 
+        }
+}
+@media (max-width: 991px) {
+    .navigation.nav-bg {
+        padding: 15px 20px;
+    }
+}
+
+@media (max-width: 991px) {
+    .navigation {
+        padding: 20px;
+        background: #41228e;
+    }
+}
 .navbar .nav-item .nav-link {
   font-family: "Playfair Display", serif;
   text-transform: uppercase;
@@ -432,6 +481,7 @@ textarea.form-control {
   position: relative;
 }
 @media (max-width: 767px) {
+
   .hero-area {
     padding: 250px 0 150px;
     overflow: hidden;

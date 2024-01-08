@@ -1,0 +1,123 @@
+﻿body {
+    background-color: #5d6d7e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.login-container {
+    max-width: 400px;
+    width: 100%;
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+    .login-container h2 {
+        margin-bottom: 30px;
+        text-align: center;
+        color: #333;
+    }
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+    .form-group input {
+        width: 100%;
+        padding: 12px;
+        border: none;
+        border-radius: 5px;
+        background-color: #f5f5f5;
+        color: #333;
+        transition: background-color 0.3s ease-in-out;
+    }
+
+        .form-group input:focus {
+            outline: none;
+            background-color: #e2e6ea;
+        }
+
+.show-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #555;
+}
+
+.btn-show-password {
+    background-color: transparent;
+    border: none;
+    color: #555;
+    cursor: pointer;
+}
+
+    .btn-show-password:focus {
+        outline: none;
+    }
+
+.btn-login {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: #2ecc71;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+    .btn-login:hover {
+        background-color: #27ae60;
+    }
+
+.login-container form {
+    animation: fadeInAnimation 1s ease-in-out;
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+    .remember-me label {
+        display: flex;
+        align-items: center;
+    }
+
+.create-account {
+    text-align: center;
+    color: #333;
+}
+
+    .create-account a {
+        color: #007bff;
+        text-decoration: none;
+        transition: color 0.3s ease-in-out;
+    }
+
+        .create-account a:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }

@@ -1,21 +1,20 @@
-﻿using System;
+﻿using Entity.Dto.Categories;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Entity
+namespace Entity.Dto.Blogs
 {
-    public class Blog: BaseEntity
+    public class BlogCreateDTO
     {
         public string Title { get; set; }
         public string Content { get; set; }
-        public int ViewCount { get; set; }
         public Guid CategoryId { get; set; }
-        public Category Category { get; set; }
-        public Guid ImageId { get; set; }
         public Image Image { get; set; }
-        public string Author { get; set; } 
+        public IList<CategoryDTO> Categories { get; set; }
+        public string Author { get; set; }
         public bool IsActive { get; set; }
     }
 }

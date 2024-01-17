@@ -1,0 +1,34 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "ckeditor5@40.1.0",
+      "destination": "wwwroot/plugins/ckeditor5/"
+    },
+    {
+      "library": "font-awesome@6.5.1",
+      "destination": "wwwroot/plugins/font-awesome/"
+    },
+    {
+      "library": "datatables@1.10.21",
+      "destination": "wwwroot/lib/datatables/",
+      "files": [
+        "js/jquery.dataTables.min.js",
+        "js/dataTables.bootstrap.js",
+        "js/dataTables.bootstrap.min.js",
+        "js/dataTables.bootstrap4.js",
+        "js/dataTables.bootstrap4.min.js",
+        "js/jquery.dataTables.js",
+        "css/dataTables.bootstrap.min.css",
+        "css/dataTables.bootstrap.css",
+        "css/dataTables.bootstrap4.css",
+        "css/dataTables.bootstrap4.min.css"
+      ]
+    },
+    {
+      "library": "datatables-buttons@2.4.2",
+      "destination": "wwwroot/lib/datatables-buttons/"
+    }
+  ]
+}

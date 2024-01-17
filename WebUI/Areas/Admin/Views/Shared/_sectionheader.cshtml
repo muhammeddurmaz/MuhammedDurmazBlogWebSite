@@ -1,0 +1,15 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    var pageName = ViewContext.RouteData.Values["controller"];
+    var action = ViewContext.RouteData.Values["action"];
+}
+<div class="section-header">
+    <h1>DataTables</h1>
+    <div class="section-header-breadcrumb">
+        <div class="breadcrumb-item active"><a asp-area="Admin" asp-action="Index" asp-controller="Home">Dashboard</a></div>
+        <div class="breadcrumb-item"><a asp-area="Admin" asp-action="Index" asp-controller="@pageName.ToString()">@(pageName.ToString())</a></div>
+        <div class="breadcrumb-item">@(action.ToString())</div>
+    </div>
+</div>

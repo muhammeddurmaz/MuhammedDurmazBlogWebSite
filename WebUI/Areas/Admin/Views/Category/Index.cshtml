@@ -1,0 +1,114 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model List<CategoryDTO>
+
+
+
+<section class="section">
+
+    @await Html.PartialAsync("_sectionheader")
+    <div class="section-body">
+        <h2 class="section-title">Categories</h2>
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header justify-content-between">
+                        <h4>Category Table</h4>
+                        <a class="btn btn-primary text-white" asp-action="Insert" asp-controller="Category" asp-area="Admin"><i class="ion-plus-round"></i> Add Category</a>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-striped" id="table-2">
+                                <thead>
+                                    <tr>
+                                        @*  <th class="text-center">
+                                        <div class="custom-checkbox custom-control">
+                                        <input type="checkbox" data-checkboxes="mygroup" data-checkbox-role="dad" class="custom-control-input" id="checkbox-all">
+                                        <label for="checkbox-all" class="custom-control-label">&nbsp;</label>
+                                        </div>
+                                        </th> *@
+                                        <th></th>
+                                        <th>Category Name</th>
+                                        <th>Created Date</th>
+                                        <th>Status</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var category in Model)
+                                    {
+                                        <tr>
+                                            @* <td>
+                                        <div class="custom-checkbox custom-control">
+                                        <input type="checkbox" data-checkboxes="mygroup" class="custom-control-input" id="checkbox-1">
+                                        <label for="checkbox-1" class="custom-control-label">&nbsp;</label>
+                                        </div>
+                                        </td> *@
+                                            <td></td>
+                                            <td style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis">@category.Name</td>
+                                          
+                                            <td>
+                                                @category.CreatedDate
+                                            </td>
+                                            <td></td>
+                                            <td>
+                                                <div class="dropdown d-inline">
+                                                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        <i class="ion-ios-bolt"></i>
+                                                    </button>
+                                                    <div class="dropdown-menu">
+                                                        <a class="dropdown-item has-icon" href="/Admin/Category/Update/@category.Id"><i class="ion-android-create"></i> Update</a>
+                                                        <button class="dropdown-item has-icon" data-toggle="modal" data-target="#exampleModal" data-id="/Admin/Category/Delete/@category.Id"><i class="ion-ios-trash"></i> Delete</button>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    }
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<div class="modal fade" tabindex="-1" role="dialog" id="exampleModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Delete</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Gerçekten silmek istiyor musun ?</p>
+            </div>
+            <div class="modal-footer bg-whitesmoke br">
+                <a id="modal-link" class="btn btn-danger" href="">Delete</a>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        $('#exampleModal').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget); // Button that triggered the modal
+            var recipient = button.data('id'); // Extract info from data-* attributes
+
+            var modal = $(this);
+            modal.find('.modal-body #receivedUrl').text(recipient);
+            modal.find('#modal-link').attr('href', recipient);
+        });
+    </script>
+}

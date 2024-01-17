@@ -1,0 +1,65 @@
+﻿@using Entity.Dto.Skills
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model SkillCreateDTO
+
+<section class="section">
+
+    @await Html.PartialAsync("_sectionheader")
+    <div class="section-body">
+        <h2 class="section-title">Skill</h2>
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    @* <div class="card-header">
+                    <h4>Full Summernote</h4>
+                    </div> *@
+                    <div class="card-body">
+                        <form class="needs-validation" asp-controller="Skill" asp-action="Insert" method="post" novalidate="">
+                            
+                            <div class="form-group row mb-4">
+                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Name</label>
+                                <div class="col-sm-12 col-md-7">
+                                    <input asp-for="Name" type="text" class="form-control" required="">
+                                    <div class="invalid-feedback">
+                                        Bu alanı boş geçemezsin !
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row mb-4">
+                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Level (%..)</label>
+                                <div class="col-sm-12 col-md-7">
+                                    <input asp-for="Level" type="number" class="form-control" required="">
+                                    <div class="invalid-feedback">
+                                        Bu alanı boş geçemezsin !
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row mb-4">
+                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">ElementColor</label>
+                                <div class="col-sm-12 col-md-7">
+                                    <input asp-for="ElementColor" type="text" class="form-control" required="">
+                                    <div class="invalid-feedback">
+                                        Bu alanı boş geçemezsin !
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="form-group row mb-4">
+                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
+                                <div class="col-sm-12 col-md-7">
+                                    <button type="submit" class="btn btn-primary">Save</button>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

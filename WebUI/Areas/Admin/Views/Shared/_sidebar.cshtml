@@ -1,0 +1,65 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<div class="main-sidebar sidebar-style-2">
+    <aside id="sidebar-wrapper">
+        <div class="sidebar-brand">
+            <a asp-area="Admin" asp-action="Index" asp-controller="Home">Muhammed</a>
+        </div>
+        <div class="sidebar-brand sidebar-brand-sm">
+            <a asp-area="Admin" asp-action="Index" asp-controller="Home">M</a>
+        </div>
+        <ul class="sidebar-menu">
+            <li class="menu-header">Dashboard</li>
+            <li class="dropdown">
+                <a href="#" class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>Blogs</span></a>
+                <ul class="dropdown-menu">
+                    <li><a class="nav-link" asp-area="Admin" asp-action="Index" asp-controller="Blog">Blogs</a></li>
+                    <li><a class="nav-link" asp-area="Admin" asp-action="Insert" asp-controller="Blog">Add Blog</a></li>
+                    <li><a class="nav-link" asp-area="Admin" asp-action="DeletedBlog" asp-controller="Blog">Deleted Blogs</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i> <span>Categories</span></a>
+                <ul class="dropdown-menu">
+                    <li><a class="nav-link" asp-area="Admin" asp-action="Index" asp-controller="Category">Categories</a></li>
+                    <li><a class="nav-link" asp-area="Admin" asp-action="Insert" asp-controller="Category">Add Category</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="nav-link has-dropdown"><i class="fas fa-file"></i><span>Projects</span></a>
+                <ul class="dropdown-menu">
+                    <li><a class="nav-link" asp-area="Admin" asp-action="List" asp-controller="Project">Projects</a></li>
+                    <li><a class="nav-link" asp-area="Admin" asp-action="Insert" asp-controller="Project">Add Project</a></li>
+                    <li><a class="nav-link" asp-area="Admin" asp-action="DeletedProject" asp-controller="Project">Deleted Projects</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="nav-link has-dropdown"><i class="fas fa-bolt"></i><span>Skills</span></a>
+                <ul class="dropdown-menu">
+                    <li><a class="nav-link" asp-area="Admin" asp-action="List" asp-controller="Skill">Skills</a></li>
+                    <li><a class="nav-link" asp-area="Admin" asp-action="Insert" asp-controller="Skill">Add Skill</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="nav-link has-dropdown"><i class="fas fa-ellipsis-h"></i> <span>Pages</span></a>
+                <ul class="dropdown-menu">
+                    <li><a asp-area="Admin" asp-action="ContentInsert" asp-controller="Home">Home Page</a></li>
+                    <li><a asp-area="Admin" asp-action="ContentInsert" asp-controller="AboutPage">About Page</a></li>
+                    <li><a href="utilities-subscribe.html">Subscribe</a></li>
+                </ul>
+            </li>
+            <li><a class="nav-link" asp-area="Admin" asp-action="FormList" asp-controller="Contact"><i class="fas fa-envelope"></i> <span>Contact Forms</span></a></li>
+            <li><a class="nav-link" asp-area="Admin" asp-action="ContactUpdate" asp-controller="Contact"><i class="fas fa-address-card"></i> <span>Contacts</span></a></li>
+            <li><a class="nav-link" asp-area="Admin" asp-action="List" asp-controller="Image"><i class="fas fa-image"></i> <span>Images</span></a></li>
+        </ul>
+
+        <div class="mt-4 mb-4 p-3 hide-sidebar-mini">
+            <a asp-area="" asp-action="Index" asp-controller="Home" target="_blank" class="btn btn-primary btn-lg btn-block btn-icon-split">
+                <i class="fas fa-rocket"></i> Web Siteyi Gör
+            </a>
+        </div>
+    </aside>
+</div>

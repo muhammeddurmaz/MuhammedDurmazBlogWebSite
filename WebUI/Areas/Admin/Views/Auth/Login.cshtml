@@ -1,0 +1,75 @@
+﻿
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = null;
+}
+@model UserLoginRequest
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login Sayfası</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- FontAwesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <!-- Google Fonts - Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="~/css/login.css" rel="stylesheet">
+  
+</head>
+<body>
+
+<div class="login-container">
+  <h2><i class="fas fa-user-circle"></i> Login</h2>
+  <form asp-action="Login" asp-controller="Auth" method="post">
+    <div class="form-group">
+      <input asp-for="Email" type="email" name="email" placeholder="Kullanıcı Adı veya E-posta" autofocus>
+      <span asp-validation-for="Email"></span>
+    </div>
+    <div class="form-group">
+      <div style="position: relative;">
+        <input asp-for="Password" type="password" name="password" id="password" placeholder="Şifre" required>
+        <span class="show-password" onclick="togglePassword()">
+          <i id="eyeIcon" class="fas fa-eye"></i>
+        </span>
+       <span asp-validation-for="Email"></span>
+      </div>
+    </div>
+    <div class="remember-me">
+      <label>
+        <input asp-for="RememberMe" type="checkbox"> Beni Hatırla
+      </label>
+      <a href="#">Şifremi Unuttum</a>
+    </div>
+    <button type="submit" class="btn-login"><i class="fas fa-sign-in-alt"></i> Giriş Yap</button>
+  </form>
+  <div class="create-account">
+    <p>Hesabınız yok mu? <a href="#">Hesap Oluştur</a></p>
+  </div>
+</div>
+
+<!-- FontAwesome Script -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+
+<script>
+  function togglePassword() {
+    const passwordField = document.getElementById('password');
+    const eyeIcon = document.getElementById('eyeIcon');
+
+    if (passwordField.type === 'password') {
+      passwordField.type = 'text';
+      eyeIcon.classList.remove('fa-eye');
+      eyeIcon.classList.add('fa-eye-slash');
+    } else {
+      passwordField.type = 'password';
+      eyeIcon.classList.remove('fa-eye-slash');
+      eyeIcon.classList.add('fa-eye');
+    }
+  }
+</script>
+
+</body>
+</html>

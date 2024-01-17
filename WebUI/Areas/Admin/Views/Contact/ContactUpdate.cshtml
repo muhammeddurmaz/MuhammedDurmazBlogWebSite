@@ -1,0 +1,88 @@
+﻿@using Entity.Dto.Contacts
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model ContactCreateDTO
+
+<section class="section">
+
+    @await Html.PartialAsync("_sectionheader")
+    <div class="section-body">
+        <h2 class="section-title">Contact</h2>
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    @* <div class="card-header">
+                        <h4>Full Summernote</h4>
+                    </div> *@
+                    <div class="card-body">
+                        <form class="needs-validation" asp-controller="Contact" asp-action="ContactUpdate" method="post" novalidate="">
+                            <input asp-for="Id" hidden="hidden" type="text" class="form-control">
+                            <div class="form-group row mb-4">
+                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Email</label>
+                                <div class="col-sm-12 col-md-7">
+                                    <input asp-for="Email" type="text" class="form-control" required="">
+                                    <div class="invalid-feedback">
+                                        Bir Email Girmelisin !
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row mb-4">
+                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">PhoneNumber</label>
+                                <div class="col-sm-12 col-md-7">
+                                    <input asp-for="PhoneNumber" type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group row mb-4">
+                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Address</label>
+                                <div class="col-sm-12 col-md-7">
+                                    <input asp-for="Address" type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group row mb-4">
+                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Linkedin</label>
+                                <div class="col-sm-12 col-md-7">
+                                    <input asp-for="Linkedin" type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group row mb-4">
+                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Twitter</label>
+                                <div class="col-sm-12 col-md-7">
+                                    <input asp-for="Twitter" type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group row mb-4">
+                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Github</label>
+                                <div class="col-sm-12 col-md-7">
+                                    <input asp-for="Github" type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group row mb-4">
+                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Medium</label>
+                                <div class="col-sm-12 col-md-7">
+                                    <input asp-for="Medium" type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group row mb-4">
+                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">StackOverflow</label>
+                                <div class="col-sm-12 col-md-7">
+                                    <input asp-for="StackOverflow" type="text" class="form-control">
+                                </div>
+                            </div>
+                           
+                            <div class="form-group row mb-4">
+                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3"></label>
+                                <div class="col-sm-12 col-md-7">
+                                    <button type="submit" class="btn btn-primary">Publish</button>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,29 @@
+﻿@using Entity.Dto.ContactForms
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model List<ContactFormAdminViewDTO>
+<div class="dropdown-list-content dropdown-list-message">
+    @foreach (var form in Model)
+    {
+        
+        <a href="#" class="dropdown-item dropdown-item-unread">
+            
+            <div class="dropdown-item-avatar">
+                <img alt="image" src="~/assets/img/avatar/avatar-1.png" class="rounded-circle">
+                <div class="is-online"></div>
+            </div>
+            <div class="dropdown-item-desc">
+                <b>@form.Name</b>
+                <p>@form.Message</p>
+                <div class="time d-flex justify-content-between align-items-center">@form.CreatedDate</div>
+            </div>
+      
+        </a>
+        
+    }
+
+</div>

@@ -1,0 +1,95 @@
+﻿@using Entity.Dto.Images
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model List<ImageDTO>
+
+<section class="section">
+
+    @await Html.PartialAsync("_sectionheader")
+    <div class="section-body">
+        <h2 class="section-title">Images</h2>
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Advanced Table</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-striped" id="table-2">
+                                <thead>
+                                    <tr>
+                                        @*  <th class="text-center">
+                                        <div class="custom-checkbox custom-control">
+                                        <input type="checkbox" data-checkboxes="mygroup" data-checkbox-role="dad" class="custom-control-input" id="checkbox-all">
+                                        <label for="checkbox-all" class="custom-control-label">&nbsp;</label>
+                                        </div>
+                                        </th> *@
+                                        <th></th>
+                                        <th>Title</th>
+                                        <th>Url</th>
+                                        <th>Created Date</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var image in Model)
+                                    {
+                                        <tr>
+                                            @* <td>
+                                        <div class="custom-checkbox custom-control">
+                                        <input type="checkbox" data-checkboxes="mygroup" class="custom-control-input" id="checkbox-1">
+                                        <label for="checkbox-1" class="custom-control-label">&nbsp;</label>
+                                        </div>
+                                        </td> *@
+                                            <td></td>
+                                            <td style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis">@image.Title</td>
+
+                                            <td>
+                                                @image.Url
+                                            </td>
+                                            <td></td>
+                                            <td>
+                                                <div class="dropdown d-inline">
+                                                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        <i class="ion-ios-bolt"></i>
+                                                    </button>
+                                                    <div class="dropdown-menu">
+                                                        <a class="dropdown-item has-icon" href=""><i class="ion-android-create"></i> Update</a>
+                                                        <button class="dropdown-item has-icon" data-toggle="modal" data-target="#exampleModal" data-id="/@* Admin/Category/Delete/@category.Id *@"><i class="ion-ios-trash"></i> Delete</button>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    }
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Gallery</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="gallery">
+                            @foreach(var image in Model)
+                            {
+                                <div class="gallery-item" data-image="@image.Url" data-title="@image.Title"></div>
+                            }
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

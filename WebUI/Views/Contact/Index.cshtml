@@ -3,12 +3,21 @@
 *@
 @{
 }
+@model ContactViewDTO
+
 <!-- page title -->
 <section class="page-title bg-primary position-relative">
     <div class="container">
         <div class="row">
             <div class="col-12 text-center">
                 <h1 class="text-white font-tertiary">Contacts</h1>
+                <div  class="pt-5 mt-3 contact-icon">
+                    <a href="@Model.Github" title="github" class="text-white" target="_blank"><i class="ti-github"></i></a>
+                    <a href="@Model.Linkedin" title="Linkedin" class=" text-white" target="_blank"><i class="ti-linkedin"></i></a>
+                    <a title="Mail" href="mailto:@Model.Email" class="text-white" target="_blank"><i class="far fa-envelope"></i></a>
+                    <a href="@Model.Twitter" title="Twitter" class="text-white" target="_blank"><i class="ti-twitter"></i></a>
+                    <a href="@Model.Medium" title="Medium" class="text-white" target="_blank"><i class="fab fa-medium"></i></a>
+                </div>
             </div>
         </div>
     </div>

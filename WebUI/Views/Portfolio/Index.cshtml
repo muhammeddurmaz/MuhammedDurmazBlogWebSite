@@ -1,8 +1,10 @@
-﻿@*
+﻿@using Entity.Dto.Projects
+@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
 }
+@model List<ProjectViewDTO>
 <!-- page title -->
 <section class="page-title bg-primary position-relative">
     <div class="container">
@@ -25,7 +27,7 @@
     <div class="container">
         <div class="row mb-5">
             <div class="col-12">
-                <div class="btn-group btn-group-toggle justify-content-center d-flex" data-toggle="buttons">
+                @* <div class="btn-group btn-group-toggle justify-content-center d-flex" data-toggle="buttons">
                     <label class="btn btn-sm btn-primary active">
                         <input type="radio" name="shuffle-filter" value="all" checked="checked" />All
                     </label>
@@ -38,11 +40,11 @@
                     <label class="btn btn-xs btn-primary">
                         <input type="radio" name="shuffle-filter" value="illustration" />ILLUSTRATION
                     </label>
-                </div>
+                </div> *@
             </div>
         </div>
         <div class="row shuffle-wrapper">
-            <div class="col-lg-4 col-6 mb-4 shuffle-item" data-groups="[&quot;design&quot;,&quot;illustration&quot;]">
+           @*  <div class="col-lg-4 col-6 mb-4 shuffle-item" data-groups="[&quot;design&quot;,&quot;illustration&quot;]">
                 <div class="position-relative rounded hover-wrapper">
                     <img src="~/images/portfolio/item-1.png" alt="portfolio-image" class="img-fluid rounded w-100 d-block">
                     <div class="hover-overlay">
@@ -51,8 +53,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-4 col-6 mb-4 shuffle-item" data-groups="[&quot;branding&quot;]">
+            </div> *@
+           @*  <div class="col-lg-4 col-6 mb-4 shuffle-item" data-groups="[&quot;branding&quot;]">
                 <div class="position-relative rounded hover-wrapper">
                     <img src="~/images/portfolio/item-2.png" alt="portfolio-image" class="img-fluid rounded w-100 d-block">
                     <div class="hover-overlay">
@@ -61,77 +63,28 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> *@
           
-          
-            <div class="col-lg-4 col-6 mb-4 shuffle-item illustration" data-groups="[&quot;illustration&quot;]">
-                <div class="position-relative rounded hover-wrapper">
-                    <img src="~/images/portfolio/item-7.png" alt="portfolio-image" class="img-fluid rounded w-100 d-block">
-                    <div class="hover-overlay">
-                        <div class="hover-content">
-                            <a class="btn btn-light btn-sm" href="#!">view project</a>
+            @foreach(var project in Model)
+            {
+                <div class="col-lg-4 col-6 mb-4 shuffle-item illustration" data-groups="[&quot;illustration&quot;]">
+                    <h4>@project.Name</h4>
+                    <div class="position-relative rounded hover-wrapper">
+                        
+                        <img src="@project.Image.Url" alt="@project.Image.Title" class="img-fluid rounded w-100 d-block">
+                        
+                        <div class="hover-overlay">
+                            <div class="hover-content">
+                                <a class="btn btn-light btn-sm" target="_blank" href="@project.Url">view project</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            }
+          
+            
         </div>
     </div>
 </section>
 <!-- /portfolio -->
-<!-- clients -->
-<section class="section bg-light">
-    <div class="container">
-        <div class="row">
-            <div class="col-12 text-center">
-                <h2 class="section-title">My Clients</h2>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12">
-                <div class="client-logo-slider d-flex align-items-center">
-                    <a href="contact.html" class="text-center d-block outline-0 p-4">
-                        <img class="d-unset img-fluid"
-                             src="~/images/clients-logo/client-logo-1.png" alt="client-logo">
-                    </a>
-                    <a href="contact.html" class="text-center d-block outline-0 p-4">
-                        <img class="d-unset img-fluid"
-                             src="~/images/clients-logo/client-logo-2.png" alt="client-logo">
-                    </a>
-                    <a href="contact.html" class="text-center d-block outline-0 p-4">
-                        <img class="d-unset img-fluid"
-                             src="~/images/clients-logo/client-logo-3.png" alt="client-logo">
-                    </a>
-                    <a href="contact.html" class="text-center d-block outline-0 p-4">
-                        <img class="d-unset img-fluid"
-                             src="~/images/clients-logo/client-logo-4.png" alt="client-logo">
-                    </a>
-                    <a href="contact.html" class="text-center d-block outline-0 p-4">
-                        <img class="d-unset img-fluid"
-                             src="~/images/clients-logo/client-logo-5.png" alt="client-logo">
-                    </a>
-                    <a href="contact.html" class="text-center d-block outline-0 p-4">
-                        <img class="d-unset img-fluid"
-                             src="~/images/clients-logo/client-logo-1.png" alt="client-logo">
-                    </a>
-                    <a href="contact.html" class="text-center d-block outline-0 p-4">
-                        <img class="d-unset img-fluid"
-                             src="~/images/clients-logo/client-logo-2.png" alt="client-logo">
-                    </a>
-                    <a href="contact.html" class="text-center d-block outline-0 p-4">
-                        <img class="d-unset img-fluid"
-                             src="~/images/clients-logo/client-logo-3.png" alt="client-logo">
-                    </a>
-                    <a href="contact.html" class="text-center d-block outline-0 p-4">
-                        <img class="d-unset img-fluid"
-                             src="~/images/clients-logo/client-logo-4.png" alt="client-logo">
-                    </a>
-                    <a href="contact.html" class="text-center d-block outline-0 p-4">
-                        <img class="d-unset img-fluid"
-                             src="~/images/clients-logo/client-logo-5.png" alt="client-logo">
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- /clients -->
+@await Html.PartialAsync("_technologies-logo")

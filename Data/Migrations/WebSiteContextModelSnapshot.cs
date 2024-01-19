@@ -261,6 +261,7 @@ namespace Data.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("UserId");
+                   
 
                     b.ToTable("AspNetUserClaims", (string)null);
                 });

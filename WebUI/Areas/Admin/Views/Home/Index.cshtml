@@ -30,17 +30,37 @@
 				<section id="actions" class="py-4 mb-4 bg-light">
 					<div class="container">
 						<div class="row">
-							<div class="col-md-3">
+							<div class="col-md-3 my-2">
 								<a asp-action="Insert" asp-controller="Blog" class="btn btn-primary btn-block">
 									<i class="fas fa-plus"></i> Add BLog
 								</a>
 							</div>
-							<div class="col-md-3">
+							<div class="col-md-3 my-2">
 								<a asp-action="Insert" asp-controller="Category" class="btn btn-success btn-block">
 									<i class="fas fa-plus"></i> Add Category
 								</a>
 							</div>
-							<div class="col-md-3">
+							<div class="col-md-3 my-2">
+								<a asp-action="ContactUpdate" asp-controller="Contact" class="btn btn-warning btn-block">
+									<i class="fas fa-plus"></i> Update Contact
+								</a>
+							</div>
+							<div class="col-md-3 my-2">
+								<a asp-action="Insert" asp-controller="Skill" class="btn btn-secondary btn-block" >
+									<i class="fas fa-plus"></i> Add Skill
+								</a>
+							</div>
+							<div class="col-md-3 my-2">
+								<a href="#" class="btn btn-primary btn-block" data-toggle="modal" data-target="#addUserModal">
+									<i class="fas fa-plus"></i> Add User
+								</a>
+							</div>
+							<div class="col-md-3 my-2">
+								<a href="#" class="btn btn-warning btn-block" data-toggle="modal" data-target="#addUserModal">
+									<i class="fas fa-plus"></i> Add User
+								</a>
+							</div>
+							<div class="col-md-3 my-2">
 								<a href="#" class="btn btn-warning btn-block" data-toggle="modal" data-target="#addUserModal">
 									<i class="fas fa-plus"></i> Add User
 								</a>
@@ -53,7 +73,7 @@
 				<section id="posts">
 					<div class="container">
 						<div class="row">
-							<div class="col-md-9">
+							@* <div class="col-md-9">
 
 								<div class="card">
 									<div class="card-header">
@@ -142,8 +162,8 @@
 									</nav>
 									<!--END PAGINATION-->
 								</div>
-							</div>
-							<div class="col-md-3">
+							</div> *@
+							<div class="col-md-3 flex-wrap">
 								<div class="card text-center bg-primary text-white mb-3">
 									<div class="card-body">
 										<h3>Blogs</h3>

@@ -23,7 +23,7 @@ namespace Data.Extensions
             services.AddScoped<IProjectRepository, EfCoreProjectRepository>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 
-
+            
 
             services.AddDbContext<WebSiteContext>(opt => opt.UseSqlServer(config.GetConnectionString("DefaultConnection")));
             return services;

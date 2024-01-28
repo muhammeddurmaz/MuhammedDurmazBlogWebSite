@@ -68,7 +68,7 @@ namespace Business.Concrete
 
         public List<BlogDTO> getAllBlogs()
         {
-            var blogs = blogRepository.GetAll(blog => blog.IsActive || !blog.IsDeleted, blog => blog.Category, blog => blog.Image);
+            var blogs = blogRepository.GetAll(blog => blog.IsActive && !blog.IsDeleted, blog => blog.Category, blog => blog.Image);
             var map = _mapper.Map<List<BlogDTO>>(blogs);
             return map;
         }

@@ -1,8 +1,10 @@
 ﻿using AutoMapper;
 using Business.Abstract;
+using Business.UtilService;
 using Data.UnitOfWorks;
 using Entity;
 using Entity.Dto.ContactForms;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,11 +17,13 @@ namespace Business.Concrete
     {
         private readonly IUnitOfWork unitOfWork;
         private readonly IMapper mapper;
+        private readonly IMailService mailService;
 
-        public ContactFormServiceImpl(IUnitOfWork unitOfWork, IMapper mapper) 
+        public ContactFormServiceImpl(IUnitOfWork unitOfWork, IMapper mapper,IMailService mailService) 
         {
             this.unitOfWork = unitOfWork;
             this.mapper = mapper;
+            this.mailService = mailService;
         }
         public List<ContactFormAdminViewDTO> ContactFormAdminView()
         {
@@ -35,6 +39,7 @@ namespace Business.Concrete
             contactForm.CreatedBy = "User";
             unitOfWork.GetRepository<ContactForm>().Save(contactForm);
             unitOfWork.SaveChanges();
+            mailService.SendEmail(contactForm.Email,contactForm.Name);
         }
 
         public void HardDelete(Guid id)

@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Business.Concrete;
+using Business.UtilService;
 using Data.Abstract;
 using Data.Concrete;
 using Data.UnitOfWorks;
@@ -28,6 +29,7 @@ namespace Business.Extensions
             services.AddScoped<IProjectService, ProjectServiceImpl>();
             services.AddScoped<ISkillService, SkillServiceImpl>();
             services.AddScoped<IAboutPageService, AboutPageServiceImpl>();
+            services.AddScoped<IMailService, MailService>();
 
             services.AddAutoMapper(assembly);
             return services;

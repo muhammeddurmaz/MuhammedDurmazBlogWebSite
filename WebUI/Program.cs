@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Entity;
 using Microsoft.AspNetCore.Identity;
 using System;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,7 +14,23 @@ builder.Services.LoadBusinessLayerExtension();
 builder.Services.AddSession();
 // Add services to the container.
 builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
+builder.Services.AddAuthentication();
+builder.Services.AddAuthorization();
 
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+    options.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+}).AddCookie(options =>
+{
+    options.Cookie.Name = "MuhammedDurmazWebSite"; // Oturum çerezinin ismi
+    options.Cookie.HttpOnly = true; // Sadece HTTP üzerinden eriþilebilir
+    options.ExpireTimeSpan = TimeSpan.FromDays(30); // Çerezin süresi (örneðin 30 gün)
+    options.SlidingExpiration = true; // Oturumun süresinin kullanýcý etkileþimiyle yenilenmesi
+    options.LoginPath = "/Admin/Auth/Login"; // Kullanýcý giriþ yapmadýysa yönlendirme yapýlacak yol
+    options.LogoutPath = "/Admin/Auth/Logout"; // Kullanýcý çýkýþ yaptýysa yönlendirme yapýlacak yol
+});
 
 builder.Services.AddIdentity<AppUser, AppRole>(opt =>
 {
@@ -37,10 +54,11 @@ builder.Services.ConfigureApplicationCookie(config =>
         SecurePolicy = CookieSecurePolicy.SameAsRequest //Always 
     };
     config.SlidingExpiration = true;
-    config.ExpireTimeSpan = TimeSpan.FromDays(7);
+    config.ExpireTimeSpan = TimeSpan.FromDays(30);
     config.AccessDeniedPath = new PathString("/Admin/Auth/AccessDenied");
+    config.SlidingExpiration = true;
+    config.Cookie.IsEssential = true;
 });
-
 
 var app = builder.Build();
 

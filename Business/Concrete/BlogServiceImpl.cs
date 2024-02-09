@@ -95,10 +95,18 @@ namespace Business.Concrete
             return map;
         }
 
-        public BlogDetailDTO getBlogViewDetailById(Guid id)
+        public async Task<BlogDetailDTO> getBlogViewDetailById(Guid id)
         {
             var blog = blogRepository.GetEntity(blog => blog.Id == id, blog => blog.Category, blog => blog.Image);
             var map = _mapper.Map<BlogDetailDTO>(blog);
+
+            await Task.Run(() =>
+            {
+                blog.ViewCount = blog.ViewCount + 1;
+                var blogUpdateDTO = _mapper.Map<BlogUpdateDTO>(blog);
+                UpdateBlog(blogUpdateDTO);
+            });
+
             return map;
         }
 

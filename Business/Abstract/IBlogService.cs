@@ -11,7 +11,7 @@ namespace Business.Abstract
     public interface IBlogService
     {
         BlogDTO getBlogById(Guid id);
-        BlogDetailDTO getBlogViewDetailById(Guid id);
+        Task<BlogDetailDTO> getBlogViewDetailById(Guid id);
         List<BlogDTO> getAllBlogs();
         void AddBlog(BlogCreateDTO blog);
         List<BlogAdminViewForListDTO> getAllBlogsForAdminList();
